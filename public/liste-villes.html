@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liste des Villes - Gestion des Villes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🏙️ Liste des Villes</h1>
+        <p>Consultez toutes les villes enregistrées</p>
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">🏠 Accueil</a>
+          <a href="ajouter-ville.html" class="nav-link">➕ Ajouter une ville</a>
+          <a href="liste-villes.html" class="nav-link active"
+            >📋 Liste des villes</a
+          >
+        </nav>
+      </header>
+
+      <main>
+        <section class="cities-section">
+          <div class="section-header">
+            <h2>🏙️ Toutes les villes</h2>
+            <button onclick="loadCities()" class="refresh-btn">
+              🔄 Actualiser
+            </button>
+          </div>
+          <div id="cities-list">
+            <!-- Les villes seront affichées ici via JavaScript -->
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="liste-villes.js"></script>
+  </body>
+</html>
