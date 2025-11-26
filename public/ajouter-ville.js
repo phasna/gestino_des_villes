@@ -60,3 +60,56 @@ document.addEventListener("DOMContentLoaded", () => {
 //   address: "1 Rue de la Paix, 75001 Paris",
 //   gallery: ["marseille", "lille", "nantes"]
 // }
+document.addEventListener("DOMContentLoaded", () => {
+  const ajouterVilleForm = document.getElementById("ajouter-ville-form");
+  if (ajouterVilleForm) {
+    ajouterVilleForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById("nom-ville").value;
+      const agence = document.getElementById("agence-ville").value;
+      const image = document.getElementById("image-ville").value;
+      const description = document.getElementById("description-ville").value;
+      const address = document.getElementById("address-ville").value;
+      const galleryInput = document.getElementById("gallery-ville").value;
+      const gallery = galleryInput
+        ? galleryInput.split(",").map((item) => item.trim())
+        : [];
+
+      const villeData = {
+        name: name,
+        agence: agence,
+        image: image,
+        description: description,
+        address: address,
+        gallery: gallery,
+      };
+      console.log("Données de la ville à ajouter:", villeData);
+      fetch("/api/cities", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          agence: agence,
+          image: image,
+          description: description,
+          address: address,
+          gallery: gallery,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Succès:", data);
+          alert("Ville ajoutée avec succès !");
+          document.getElementById("ajouter-ville-form").reset();
+          window.location.href = "liste-villes.html";
+        })
+        .catch((error) => {
+          console.error("Erreur:", error);
+          alert("Erreur lors de l'ajout de la ville");
+        });
+    });
+  }
+});

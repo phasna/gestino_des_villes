@@ -103,12 +103,17 @@ form {
 .form-group {
   display: flex;
   flex-direction: column;
+  padding: 2rem;
+  margin-bottom: 1rem;
+
 }
+
 
 label {
   font-weight: 600;
   margin-bottom: 8px;
   color: #333;
+  margin: 1rem 0;
 }
 
 input[type="text"],
@@ -143,11 +148,13 @@ button {
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 2rem;
 }
+
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 5px 15px rgba(109, 126, 204, 0.4);
 }
 
 button:active {
