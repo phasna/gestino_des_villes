@@ -129,6 +129,7 @@ function displayCities(cities) {
             : ""
         }
       </div>
+     
     `;
 
     citiesList.appendChild(cityCard);
