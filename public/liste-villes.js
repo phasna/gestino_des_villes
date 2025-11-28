@@ -129,6 +129,9 @@ function displayCities(cities) {
             : ""
         }
       </div>
+      <div class="detail-city">
+        <a href="detail-ville.html?id=${city.id}" class="btn-secondary">🔍 Voir les détails</a>
+      </div>
      
     `;
 

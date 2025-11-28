@@ -514,6 +514,19 @@ button:active {
   margin-top: 20px;
 }
 
+.detail-city {
+  text-align: center;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+.detail-city .btn-secondary {
+  padding: 10px 20px;
+  font-size: 0.9em;
+  border-radius: 5px;
+  background: #4f3666;
+}
+
 @media (max-width: 768px) {
   header h1 {
     font-size: 2em;
