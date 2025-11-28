@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faq Formulaire</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>FAQ Formulaire</h1>
+        <p>Formulaire pour les questions fréquentes</p>
+         <nav class="main-nav">
+          <a href="index.html" class="nav-link">🏠 Accueil</a>
+          <a href="ajouter-ville.html" class="nav-link active"
+            >➕ Ajouter une ville</a
+          >
+          <a href="liste-villes.html" class="nav-link">📋 Liste des villes</a>
+          <a href="faq-form.html" class="nav-link"> FAQ Formulaire</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section faq-form">
+            <h2>Formulaire de FAQ</h2>
+            <form id="faq-form">
+                <div class="form-group">
+                    <label for="question">Votre Question *</label>
+                    <input type="text" id="question" name="question" required placeholder="Question pour le formulaire" />
+                </div>
+                <div class="form-group">
+                    <label for="thematique">Thématique *</label>
+                    <input type="text" id="thematique" name="thematique" required placeholder="Thématique pour le formulaire" />
+                </div>
+                <div class="form-group">
+                    <label for="faq-image">Image FAQ</label>
+                    <input type="text" id="faq-image" name="faq-image" placeholder="URL de l'image pour le formulaire" />
+                </div>
+
+                <div class="form-group">
+                    <label for="answer">Votre Réponse *</label>
+                    <textarea id="answer" name="answer" required placeholder="Réponse pour le formulaire"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Ajouter FAQ</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</div>
+</body>
+</html>
