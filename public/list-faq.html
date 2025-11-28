@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Liste des FAQ</title>
+     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
@@ -24,7 +25,7 @@
             <section class="faq-section">
             <div class="section-header">
                 <h2> Toutes les FAQ</h2>
-                <button onclick="loadFAQs()" class="refresh-btn">
+                <button onclick="fetchFaqs()" class="refresh-btn">
                 🔄 Actualiser
                 </button>
             </div>
@@ -32,7 +33,7 @@
                 <!-- Les FAQ seront affichées ici via JavaScript -->
             </div>
             </section>
-            <script src="liste-faq.js"></script>
+            <script src="list-faq.js"></script>
         </main>
     </div>
   </body>

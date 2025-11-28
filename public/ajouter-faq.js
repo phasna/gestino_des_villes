@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const ajouterFaqForm = document.getElementById("ajouter-faq-form");
+    const ajouterFaqForm = document.getElementById("faq-form");
     if (ajouterFaqForm) {
       ajouterFaqForm.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
           faqImage: faqImage
         };
         console.log("Données de la FAQ à ajouter:", faqData);
-        fetch("/api/faq", {
+        fetch("/api/faqs", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
           .then((data) => {
             console.log("Succès:", data);
             alert("FAQ ajoutée avec succès !");
-            document.getElementById("ajouter-faq-form").reset();
-            window.location.href = "liste-faq.html";
+            document.getElementById("faq-form").reset();
+            window.location.href = "list-faq.html";
           })
           .catch((error) => {
             console.error("Erreur:", error);

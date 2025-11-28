@@ -148,6 +148,39 @@ app.delete("/api/cities/:id", (req, res) => {
   });
 });
 
+// Récupérer toutes les FAQs
+app.get("/api/faqs", (req, res) => {
+  const query = "SELECT * FROM faq ORDER BY  id DESC";
+  db.query(query, (err, results) => {
+    if (err) {
+      return res.status(500).json({ error: "Erreur lors de la récupération des FAQ" });
+    }
+    res.json(results);
+  });
+});
+
+// Créer une nouvelle FAQ
+app.post("/api/faqs", (req, res) => {
+  const { question, reponse, thematique, faqImage } = req.body;
+  // Validation des champs requis
+  if (!question || !reponse) {
+    return res.status(400).json({ error: "Les champs question et reponse sont requis" });
+  }
+
+  const query = "INSERT INTO faq (question, reponse, thematique, faqImage) VALUES (?, ?, ?, ?)";
+  const thematiqueJson = Array.isArray(thematique) ? JSON.stringify(thematique) : thematique;
+  db.query(
+    query,
+    [question, reponse, thematiqueJson || null, faqImage || null],
+    (err, results) => {
+      if (err) {
+        return res.status(500).json({ error: "Erreur lors de la création de la FAQ" });
+      }
+      res.status(201).json({ id: results.insertId, message: "FAQ créée avec succès" });
+    }
+  );
+});
+
 // Route pour servir la page HTML
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
