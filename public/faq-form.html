@@ -18,6 +18,7 @@
           >
           <a href="liste-villes.html" class="nav-link">📋 Liste des villes</a>
           <a href="faq-form.html" class="nav-link"> FAQ Formulaire</a>
+          <a href="list-faq.html" class="nav-link active">📋 Liste des FAQ</a>
         </nav>
     </header>
 
@@ -27,11 +28,11 @@
             <form id="faq-form">
                 <div class="form-group">
                     <label for="question">Votre Question *</label>
-                    <input type="text" id="question" name="question" required placeholder="Question pour le formulaire" />
+                    <input type="text" id="question-faq" name="question" required placeholder="Question pour le formulaire" />
                 </div>
                 <div class="form-group">
                     <label for="thematique">Thématique *</label>
-                    <input type="text" id="thematique" name="thematique" required placeholder="Thématique pour le formulaire" />
+                    <input type="text" id="thematique-faq" name="thematique" required placeholder="Thématique pour le formulaire" />
                 </div>
                 <div class="form-group">
                     <label for="faq-image">Image FAQ</label>
@@ -40,7 +41,7 @@
 
                 <div class="form-group">
                     <label for="answer">Votre Réponse *</label>
-                    <textarea id="answer" name="answer" required placeholder="Réponse pour le formulaire"></textarea>
+                    <textarea id="answer-faq" name="answer" required placeholder="Réponse pour le formulaire"></textarea>
                 </div>
 
                 <div class="form-actions">
@@ -48,6 +49,7 @@
                 </div>
             </form>
         </section>
+        <script src="ajouter-faq.js"></script>
     </main>
 </div>
 </body>

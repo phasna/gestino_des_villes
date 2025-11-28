@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liste des FAQ</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Listes des FAQ</h1>
+        <p>Consulter les FAQ enregistrées</p>
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">🏠 Accueil</a>
+          <a href="ajouter-ville.html" class="nav-link">➕ Ajouter une ville</a>
+          <a href="liste-villes.html" class="nav-link active"
+            >📋 Liste des villes</a
+          >
+          <a href="faq-form.html" class="nav-link"> FAQ Formulaire</a>
+          <a href="list-faq.html" class="nav-link active">📋 Liste des FAQ</a>
+        </nav>
+      </header>
+        <main>
+            <section class="faq-section">
+            <div class="section-header">
+                <h2> Toutes les FAQ</h2>
+                <button onclick="loadFAQs()" class="refresh-btn">
+                🔄 Actualiser
+                </button>
+            </div>
+            <div id="faq-list">
+                <!-- Les FAQ seront affichées ici via JavaScript -->
+            </div>
+            </section>
+            <script src="liste-faq.js"></script>
+        </main>
+    </div>
+  </body>
+</html>

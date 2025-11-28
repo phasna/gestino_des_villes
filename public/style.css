@@ -527,6 +527,40 @@ button:active {
   background: #4f3666;
 }
 
+/*FAQ Section */
+.faq-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  
+}
+.faq-question {
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+}
+.faq-answer {
+  margin-top: 1rem;
+  color: black;
+
+}
+.faq-thematique{
+  color: black;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+
+}
+.faq-image{
+  width: 100%;
+  max-width: 400px;
+  margin-top: 1rem;
+  border-radius: 5px;
+}
+
 @media (max-width: 768px) {
   header h1 {
     font-size: 2em;
