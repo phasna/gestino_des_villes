@@ -97,7 +97,10 @@ app.post("/api/cities", (req, res) => {
       }
       res
         .status(201)
-        .json({ id: results.insertId, message: "Ville créée avec succès" });
+        .json({ id: results.insertId, 
+      name: name,
+      agence: agence,
+      message: "Ville créée avec succès" });
     }
   );
 });
@@ -125,7 +128,10 @@ app.put("/api/cities/:id", (req, res) => {
       if (results.affectedRows === 0) {
         return res.status(404).json({ error: "Ville non trouvée" });
       }
-      res.json({ message: "Ville mise à jour avec succès" });
+      res.json({ id: results.insertId, 
+      name: name,
+      agence: agence,
+      message: "Ville mise à jour avec succès" });
     }
   );
 });
@@ -190,3 +196,12 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Serveur démarré sur http://localhost:${PORT}`);
 });
+
+// Exporter l'application pour les tests
+module.exports = app;
+// Démarrage du serveur uniquement si ce n'est pas en mode test
+if (process.env.NODE_ENV !== "test") {
+  app.listen(PORT, () => {
+    console.log(`Serveur lancé sur http://localhost:${PORT}`);
+  });
+}
