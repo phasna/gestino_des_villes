@@ -199,6 +199,7 @@ app.post("/api/faqs", (req, res) => {
   );
 });
 
+
 // Route pour servir la page HTML
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
