@@ -97,10 +97,12 @@ app.post("/api/cities", (req, res) => {
       }
       res
         .status(201)
-        .json({ id: results.insertId, 
-      name: name,
-      agence: agence,
-      message: "Ville créée avec succès" });
+        .json({
+          id: results.insertId,
+          name: name,
+          agence: agence,
+          message: "Ville créée avec succès",
+        });
     }
   );
 });
@@ -128,10 +130,9 @@ app.put("/api/cities/:id", (req, res) => {
       if (results.affectedRows === 0) {
         return res.status(404).json({ error: "Ville non trouvée" });
       }
-      res.json({ id: results.insertId, 
-      name: name,
-      agence: agence,
-      message: "Ville mise à jour avec succès" });
+      res.json({
+        message: "Ville mise à jour avec succès",
+      });
     }
   );
 });
@@ -159,7 +160,9 @@ app.get("/api/faqs", (req, res) => {
   const query = "SELECT * FROM faq ORDER BY  id DESC";
   db.query(query, (err, results) => {
     if (err) {
-      return res.status(500).json({ error: "Erreur lors de la récupération des FAQ" });
+      return res
+        .status(500)
+        .json({ error: "Erreur lors de la récupération des FAQ" });
     }
     res.json(results);
   });
@@ -170,19 +173,28 @@ app.post("/api/faqs", (req, res) => {
   const { question, reponse, thematique, faqImage } = req.body;
   // Validation des champs requis
   if (!question || !reponse) {
-    return res.status(400).json({ error: "Les champs question et reponse sont requis" });
+    return res
+      .status(400)
+      .json({ error: "Les champs question et reponse sont requis" });
   }
 
-  const query = "INSERT INTO faq (question, reponse, thematique, faqImage) VALUES (?, ?, ?, ?)";
-  const thematiqueJson = Array.isArray(thematique) ? JSON.stringify(thematique) : thematique;
+  const query =
+    "INSERT INTO faq (question, reponse, thematique, faqImage) VALUES (?, ?, ?, ?)";
+  const thematiqueJson = Array.isArray(thematique)
+    ? JSON.stringify(thematique)
+    : thematique;
   db.query(
     query,
     [question, reponse, thematiqueJson || null, faqImage || null],
     (err, results) => {
       if (err) {
-        return res.status(500).json({ error: "Erreur lors de la création de la FAQ" });
+        return res
+          .status(500)
+          .json({ error: "Erreur lors de la création de la FAQ" });
       }
-      res.status(201).json({ id: results.insertId, message: "FAQ créée avec succès" });
+      res
+        .status(201)
+        .json({ id: results.insertId, message: "FAQ créée avec succès" });
     }
   );
 });
@@ -199,9 +211,3 @@ app.listen(PORT, () => {
 
 // Exporter l'application pour les tests
 module.exports = app;
-// Démarrage du serveur uniquement si ce n'est pas en mode test
-if (process.env.NODE_ENV !== "test") {
-  app.listen(PORT, () => {
-    console.log(`Serveur lancé sur http://localhost:${PORT}`);
-  });
-}
