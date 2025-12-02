@@ -1,5 +1,5 @@
 const request = require("supertest"); // Importer l'application Express
-const app = require("../server"); // Importer l'application Express
+const app = require("../app"); // Importer l'application Express
 
 // Tests pour l'API des villes
 describe("GET /api/cities", () => {
