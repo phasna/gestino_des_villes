@@ -2,10 +2,11 @@
   "name": "gestion-des-villes",
   "version": "1.0.0",
   "description": "Application de gestion des villes pour stagiaire",
-  "main": "server.js",
+  "main": "serveur.js",
+  
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
+    "start": "node serveur.js",
+    "dev": "nodemon serveur.js",
     "front": "node serve-static.js",
     "test": "jest --forceExit --detectOpenHandles"
   },
